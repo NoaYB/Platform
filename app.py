@@ -11,7 +11,12 @@ def hello():
         conn.execute(text("INSERT INTO healthcheck (id) VALUES (1)"))
         val = conn.execute(text("SELECT COUNT(*) FROM healthcheck")).scalar()
 
-    return jsonify({"message": "Hello Fiverr", "db": "sqlite", "rows_in_healthcheck": val})
+    return jsonify({
+    "message": "Hello Fiverr",
+    "db": "postgres",
+    "rows_in_healthcheck": val
+})
+
 
 if __name__ == "__main__":
     app.run(port=5000, debug=True)
