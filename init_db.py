@@ -7,7 +7,7 @@ def init_db():
         conn = psycopg2.connect(
             dbname="postgres",
             user="postgres",
-            password="password",  # Try default, might fail
+            password="postgres",  # Updated password
             host="localhost",
             port="5432"
         )
